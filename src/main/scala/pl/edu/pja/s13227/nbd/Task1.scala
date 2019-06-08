@@ -13,33 +13,33 @@ object Task1 {
   )
 
   def main(args: Array[String]): Unit = {
-    println("--------------------------------------")
-    println("Petla for:")
-    println("--------------------------------------")
+    println("---------------------------------------------")
+    println("1a) Petla for:")
+    println("---------------------------------------------")
 
-    for ( day <- weekDays) {
+    for (day <- weekDays) {
       println(day)
     }
 
-    println("--------------------------------------")
-    println("Petla for, dni zaczynajace sie na 'P':")
-    println("--------------------------------------")
+    println("---------------------------------------------")
+    println("1b) Petla for, dni zaczynajace sie na 'P':")
+    println("---------------------------------------------")
 
-    for ( day <- weekDays) {
+    for (day <- weekDays) {
       if (day.startsWith("P")) {
         println(day)
       }
     }
 
-    println("--------------------------------------")
-    println("Metoda forEach:")
-    println("--------------------------------------")
+    println("---------------------------------------------")
+    println("1c) Metoda forEach:")
+    println("---------------------------------------------")
 
     weekDays.foreach( { println } )
 
-    println("--------------------------------------")
-    println("Petla while:")
-    println("--------------------------------------")
+    println("---------------------------------------------")
+    println("1d) Petla while:")
+    println("---------------------------------------------")
 
     var i = 0
     while (i < weekDays.length) {
@@ -47,17 +47,35 @@ object Task1 {
       i = i + 1
     }
 
-    println("--------------------------------------")
-    println("Funkcja rekurencyjna:")
-    println("--------------------------------------")
+    println("---------------------------------------------")
+    println("1e) Funkcja rekurencyjna:")
+    println("---------------------------------------------")
 
     recursivePrint(0, weekDays)
 
-    println("--------------------------------------")
-    println("Odwrocona funkcja rekurencyjna:")
-    println("--------------------------------------")
+    println("---------------------------------------------")
+    println("1f) Odwrocona funkcja rekurencyjna:")
+    println("---------------------------------------------")
 
-    reverseRecursivePrint(6, weekDays)
+    reversePrint(weekDays)
+
+    println("---------------------------------------------")
+    println("1g) Metoda foldl:")
+    println("---------------------------------------------")
+
+    weekDays.foldLeft()((a, b) => println(b))
+
+    println("---------------------------------------------")
+    println("1g) Metoda foldr:")
+    println("---------------------------------------------")
+
+    weekDays.foldRight()((a, b) => println(a))
+
+    println("---------------------------------------------")
+    println("1h) Metoda foldl, dni zaczynajace sie na 'P':")
+    println("---------------------------------------------")
+
+    weekDays.foldLeft()((a, b) => if (b.startsWith("P")) println(b))
 
   }
 
@@ -76,4 +94,10 @@ object Task1 {
     println(list(i))
     reverseRecursivePrint(i - 1, list)
   }
+
+  def reversePrint(list: List[String]): Unit = {
+    reverseRecursivePrint(list.size-1, list)
+  }
+
+
 }
