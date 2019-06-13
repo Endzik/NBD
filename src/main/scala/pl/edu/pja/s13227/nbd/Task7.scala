@@ -7,10 +7,10 @@ object Task7 {
     println("Osoba:")
     println("---------------------------------------------")
 
-    var michal1 = new Osoba("Michal", "Malinowski")
-    var michal2 = new Osoba("Michal", "Kowalski")
-    var piotrek = new Osoba("Piotrek", "Swiadek")
-    var random1 = new Osoba("Marcin", "Wasowski")
+    val michal1 = new Osoba("Michal", "Malinowski")
+    val michal2 = new Osoba("Michal", "Kowalski")
+    val piotrek = new Osoba("Piotrek", "Swiadek")
+    val random1 = new Osoba("Marcin", "Wasowski")
 
     println(greet(michal1))
     println(greet(michal2))

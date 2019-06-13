@@ -7,7 +7,7 @@ object Task6 {
     println("Konto Bankowe:")
     println("---------------------------------------------")
 
-    var kontoBankowe = new KontoBankowe(50)
+    val kontoBankowe = new KontoBankowe(50)
 
     kontoBankowe.wplata(100)
     kontoBankowe.wyplata(60)
